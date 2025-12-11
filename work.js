@@ -1,8 +1,17 @@
-const text = ["3rd year CSE Student", "Future Software Engineer", "Full Stack Developer"];
-let index = 0;
-let charIndex = 0;
-let currentText = "";
-let typingElement = document.querySelector(".typing");
+document.addEventListener("DOMContentLoaded", () => {
+  new Typed(".typing", {
+    strings: [
+      "Web Developer",
+      "Aspiring CSE Student",
+      "Future Software Engineer"
+    ],
+    typeSpeed: 70,
+    backSpeed: 40,
+    backDelay: 1000,
+    loop: true,
+    showCursor: false   // <--- IMPORTANT
+  });
+});
 
 function type() {
   if (charIndex < text[index].length) {
@@ -29,4 +38,5 @@ function erase() {
 
 document.addEventListener("DOMContentLoaded", () => {
   type();
+
 });
