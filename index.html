@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <script src="work.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -16,7 +17,7 @@
       <div class="logo">SANCHITA MALAKAR</div>
       <ul class="nav-links">
         <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="more.html">About</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Project</a></li>
@@ -29,7 +30,7 @@
   <section id="home" class="hero">
     <div class="hero-content">
       <h1>Hi, I'm <span>Sanchita Malakar</span></h1>
-      <h2>And I'm a <span class="typing"></span></h2>
+      <h2>And I'm a <span class="typing">|</span></h2>
       <p>I am a aspiring BTech - Computer Science student with a focus on web development and programming. As a CSE student I am open to connecting for collaboration, learning, new opportunities and challenges.</p>
 
       <div class="social-icons">
@@ -46,10 +47,10 @@
       <div class="flip-card">
         <div class="flip-card-inner">
           <div class="flip-card-front">
-           <img src="abcpic.jpg" alt="Front Image">
+           <img src="thisimg.jpg" alt="Front Image">
           </div>
           <div class="flip-card-back">
-           <img src="2saree.jpg" alt="Back Image">
+           <img src="abcpic.jpg" alt="Back Image">
           </div>
         </div>
       </div>
@@ -324,3 +325,28 @@
     <p>© 2025 Sanchita Malakar. All rights reserved.</p>
   </div>
 </footer>
+
+<script>
+const scriptURL = "https://script.google.com/macros/s/AKfycbxc6-GW4wykvWMct7p2iRJMYv18s7f1bZJg7n7j6696R-LtUUhsSfNsBOQx9dCdcK0/exec";
+document.getElementById("messageForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const formData = {
+    Name: document.getElementById("name").value,
+    Email: document.getElementById("email").value,
+    Message: document.getElementById("message").value
+  };
+
+  fetch(scriptURL, {
+    method: "POST",
+    body: JSON.stringify(formData),
+  })
+  .then(() => {
+    alert("Message Sent Successfully!");
+    document.getElementById("messageForm").reset();
+  })
+  .catch(error => alert("Error! " + error.message));
+});
+</script>
+
+
