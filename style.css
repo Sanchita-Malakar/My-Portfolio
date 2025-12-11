@@ -86,6 +86,15 @@ header {
   font-size: 32px;
   margin: 15px 0;
 }
+.typing {
+  font-weight: 600;
+  color: #00eaff;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
 
 .hero-content h2 span {
   color: #0066b8;
@@ -784,3 +793,4 @@ footer {
   font-size: 14px;
   color: #ccc;
 }
+
